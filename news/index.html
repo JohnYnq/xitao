@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <title>喜淘科技</title>
+    <link rel="stylesheet" href="../static/layui/css/layui.css">
+    <link rel="stylesheet" href="../static/css/index.css">
+</head>
+<body>
+
+<div id="header"></div>
+
+
+<!-- banner部分 -->
+<div class="banner news">
+    <div class="title">
+        <p>实时新闻</p>
+        <p class="en">Real-time News</p>
+    </div>
+</div>
+
+<!-- main部分 -->
+
+<div class="main-box">
+
+
+</div>
+<!-- footer部分 -->
+<div id="footer"></div>
+
+<script src="../static/layui/layui.js"></script>
+
+<script type="module">
+
+    import {header_nav, footer} from '../static/js/template.js';
+
+    let header_nav_dom = document.getElementById('header');
+
+    let footer_dom = document.getElementById('footer');
+
+
+    layui.config({
+        base: '../static/js/'
+    })
+        .use('firm')
+        .use('laytpl', () => {
+            layui.laytpl(header_nav).render({key: 'news'}, (html) => header_nav_dom.innerHTML = html);
+        })
+        .use('laytpl', () => {
+            layui.laytpl(footer).render({}, (html) => footer_dom.innerHTML = html)
+        })
+
+</script>
+</body>
+</html>
+
+<!--
+
+A.业内：打假不可能“独善其身” 应重视技术创新有效保护知识产权
+https://mbd.baidu.com/newspage/data/landingsuper?context=%7B%22nid%22%3A%22news_9374994840456123345%22%7D&n_type=0&p_from=1
+B.使用《都挺好》苏大强表情包会侵权？你要小心了！
+https://baijiahao.baidu.com/s?id=1629749103723987564&wfr=spider&for=pc
+
+-->

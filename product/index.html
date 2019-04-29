@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <title>喜淘科技</title>
+    <link rel="stylesheet" href="../static/layui/css/layui.css">
+    <link rel="stylesheet" href="../static/css/index.css">
+</head>
+<body>
+
+<div id="header"></div>
+
+<!-- banner部分 -->
+<div class="banner product">
+    <div class="title">
+        <p>精准服务</p>
+        <p class="en">Product Display</p>
+    </div>
+</div>
+
+
+<!-- main部分 -->
+
+
+<div class="main-box">
+
+
+</div>
+
+<!-- footer部分 -->
+<div id="footer"></div>
+
+
+<script src="../static/layui/layui.js"></script>
+
+<script type="module">
+
+    import {header_nav, footer} from '../static/js/template.js';
+
+    let header_nav_dom = document.getElementById('header');
+
+    let footer_dom = document.getElementById('footer');
+
+
+    layui.config({
+        base: '../static/js/'
+    })
+        .use('firm')
+        .use('laytpl', () => {
+            layui.laytpl(header_nav).render({key: 'product'}, (html) => header_nav_dom.innerHTML = html);
+        })
+        .use('laytpl', () => {
+            layui.laytpl(footer).render({}, (html) => footer_dom.innerHTML = html)
+        })
+
+</script>
+</body>
+</html>
+
+<!--
+
+服务对象：
+    (1)价格管控：低价、乱价、倾销；维权产品正价市场，打造品牌价格体系
+    (2)渠道梳理：未授权、隔代授权线上线下渠道管理，建立完善的渠道体系
+    (3)假货打击：打击假冒伪劣产品，树立品牌效益
+    (4)同行侵权：保护自身品牌利益，避免同行抄袭和效仿
+
+
+服务内容：
+    版权维权（包含官网和旗舰店的图片、著作权和专利等等）
+    商标维权（包含图形商标和文字商标）
+    假货购买鉴定（商家货物存在售假或者水货）
+    其他维权（以上几种没遇到的侵权的话，可采用其他方式维权）
+
+服务流程：
+   （1）建立合作 1.策略制定 2.资质审查 3.签约打款
+   （2）提供服务 4.账号注册 5.检索链接 6.维权沟通
+   （3）侵权投诉 7.知识产权投诉 8.购买鉴定 9.分销管理
+   （4）服务追踪 10.实时追踪 11.渠道梳理 12.数据反馈
+
+服务基准
+    三心:细心、耐心、恒心  二意：满意、创意
+
+竞争优势：
+    积极开拓新维权平台，保证利益扩大化；
+    更新维权方法和步骤，达到效果最大化；
+    维权前解析流程和计划，做到对接细致化；
+    维权对接客服一对一，实现沟通无缝化
+
+
+-->
